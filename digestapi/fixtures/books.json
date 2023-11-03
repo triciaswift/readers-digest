@@ -1,0 +1,50 @@
+[
+    {
+        "model": "digestapi.book",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "title": "The Neverending Story",
+            "author": "Edwin R. Billows",
+            "isbn_number": "8573282904",
+            "cover_image": "https://m.media-amazon.com/images/I/51lk9sIp1YL.jpg",
+            "categories": [3, 4]
+        }
+    },
+    {
+        "model": "digestapi.book",
+        "pk": 2,
+        "fields": {
+            "user": 1,
+            "title": "The Catcher in the Rye",
+            "author": "J.D. Salinger",
+            "isbn_number": "0316769177",
+            "cover_image": "https://i.etsystatic.com/20545894/r/il/6ff9d9/1977098755/il_570xN.1977098755_7szr.jpg",
+            "categories": [1, 4]
+        }
+    },
+    {
+        "model": "digestapi.book",
+        "pk": 3,
+        "fields": {
+            "user": 2,
+            "title": "To Kill a Mockingbird",
+            "author": "Harper Lee",
+            "isbn_number": "0061120081",
+            "cover_image": "https://images.csmonitor.com/csm/2014/07/mockingbird.png?alias=standard_900x600",
+            "categories": [1, 4]
+        }
+    },
+    {
+        "model": "digestapi.book",
+        "pk": 4,
+        "fields": {
+            "user": 2,
+            "title": "1984",
+            "author": "George Orwell",
+            "isbn_number": "0451524934",
+            "cover_image": "https://librarycatalog.cityofwoodland.org/bookcover.php?id=ils%3A.b18977054&size=large&format=Book&isn=0451524934",
+            "categories": [1, 4, 5]
+        }
+    }
+]
