@@ -58,8 +58,7 @@ class BookViewSet(viewsets.ViewSet):
         isbn_number = request.data.get("isbn_number")
         cover_image = request.data.get("cover_image")
 
-        # Create a book database row first, so you have a
-        # primary key to work with
+        # Create a book database row first, so you have a primary key to work with
         book = Book.objects.create(
             user=request.user,
             title=title,
