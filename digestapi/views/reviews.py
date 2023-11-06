@@ -35,15 +35,13 @@ class ReviewViewSet(viewsets.ViewSet):
         review.user = request.auth.user
         review.rating = request.data.get("rating")
         review.comment = request.data.get("comment")
-        review.date_posted = request.data.get("date_posted")
 
         # Save the review
         review.save()
+        review.date_posted = review.date_posted.strftime("%Y-%m-%d")
         try:
             # Serialize the objects, and pass request as context
-            serializer = ReviewSerializer(
-                review, many=False, context={"request": request}
-            )
+            serializer = ReviewSerializer(review, context={"request": request})
             # Return the serialized data with 201 status code
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         except Exception as ex:
@@ -70,7 +68,8 @@ class ReviewViewSet(viewsets.ViewSet):
 
             # Check if the user has permission to delete
             # Will return 403 automatically if permission check fails
-            self.check_object_permissions(request, review)
+            if review.user.id != request.user.id:
+                return Response(status=status.HTTP_403_FORBIDDEN)
 
             # Delete the review
             review.delete()

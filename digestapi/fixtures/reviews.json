@@ -14,8 +14,8 @@
         "model": "digestapi.review",
         "pk": 2,
         "fields": {
-            "book": 1,
-            "user": 2,
+            "book": 2,
+            "user": 1,
             "rating": 9,
             "comment": "'The Catcher in the Rye' is a timeless classic that resonated deeply with me. Holden Caulfield's narrative, filled with adolescent angst and alienation, offers a raw and unfiltered glimpse into the complexities of growing up. I connected with Holden's voice and his search for authenticity in a world he finds hypocritical. The book's exploration of the human condition and the loss of innocence is thought-provoking and emotionally resonant. Salinger's writing is both humorous and poignant, and the novel's enduring relevance makes it a must-read for anyone seeking a deeper understanding of the human experience.",
             "date_posted": "2023-11-4"
