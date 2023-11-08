@@ -1,0 +1,46 @@
+[
+    {
+        "model": "digestapi.review",
+        "pk": 1,
+        "fields": {
+            "book": 1,
+            "user": 1,
+            "rating": 7,
+            "comment": "'The NeverEnding Story' is a captivating journey into a world of boundless imagination. It beautifully explores the magic of storytelling, the importance of holding onto our dreams, and the enduring power of believing in oneself. Billow's lyrical writing and memorable characters make it a timeless classic for readers of all ages.",
+            "date_posted": "2023-11-3"
+        }
+    },
+    {
+        "model": "digestapi.review",
+        "pk": 2,
+        "fields": {
+            "book": 2,
+            "user": 1,
+            "rating": 9,
+            "comment": "'The Catcher in the Rye' is a timeless classic that resonated deeply with me. Holden Caulfield's narrative, filled with adolescent angst and alienation, offers a raw and unfiltered glimpse into the complexities of growing up. I connected with Holden's voice and his search for authenticity in a world he finds hypocritical. The book's exploration of the human condition and the loss of innocence is thought-provoking and emotionally resonant. Salinger's writing is both humorous and poignant, and the novel's enduring relevance makes it a must-read for anyone seeking a deeper understanding of the human experience.",
+            "date_posted": "2023-11-4"
+        }
+    },
+    {
+        "model": "digestapi.review",
+        "pk": 3,
+        "fields": {
+            "book": 2,
+            "user": 2,
+            "rating": 4,
+            "comment": "I know 'The Catcher in the Rye' is considered a classic, but it just didn't resonate with me. Holden Caulfield's constant complaining and cynical perspective became tiresome, and I found it hard to empathize with him. The story seemed to lack a clear plot, making it feel directionless. While it might capture the struggles of adolescence for some readers, I didn't find it relatable or engaging. The book's stream-of-consciousness style, which some praise, left me feeling disconnected from the narrative. It's one of those books that people either love or just don't connect with, and unfortunately, I fell into the latter category.",
+            "date_posted": "2023-11-6"
+        }
+    },
+    {
+        "model": "digestapi.review",
+        "pk": 4,
+        "fields": {
+            "book": 3,
+            "user": 2,
+            "rating": 6,
+            "comment": "'To Kill a Mockingbird' is often hailed as a literary classic, but my personal experience with the book left me with mixed feelings. While I can appreciate its themes of racial injustice and moral growth, I found the pacing to be slow at times, and the story's coming-of-age elements didn't resonate strongly with me. The narration through the eyes of a young girl, Scout, is both its strength and weakness, as it offers a unique perspective but also at times limits the depth of the narrative. I acknowledge the book's historical importance and its impact on literature, but for me, it was just an okay read, falling short of the high praise it often receives.",
+            "date_posted": "2023-11-9"
+        }
+    }
+]

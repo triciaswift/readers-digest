@@ -1,15 +1,30 @@
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework import serializers
-from digestapi.models import Book
+from digestapi.models import Book, Review
 from .categories import CategorySerializer
+from .reviews import ReviewOwnerSerializer
 
+
+class BookReviewSerializer(serializers.ModelSerializer):
+    user = ReviewOwnerSerializer(many=False)
+    class Meta:
+        model = Review
+        fields = (
+            "id",
+            "user",
+            "rating",
+            "comment",
+            "date_posted",
+        )
 
 class BookSerializer(serializers.ModelSerializer):
     # Override default serialization to replace foreign keys
     # with expanded related resource. By default, this would
     # be a list of integers (e.g. [2, 4, 9]).
     categories = CategorySerializer(many=True)
+
+    reviews = BookReviewSerializer(many=True)
 
     # Declare that an ad-hoc property should be included in JSON
     is_owner = serializers.SerializerMethodField()
@@ -29,6 +44,7 @@ class BookSerializer(serializers.ModelSerializer):
             "cover_image",
             "is_owner",
             "categories",
+            "reviews",
         ]
 
 
@@ -58,8 +74,7 @@ class BookViewSet(viewsets.ViewSet):
         isbn_number = request.data.get("isbn_number")
         cover_image = request.data.get("cover_image")
 
-        # Create a book database row first, so you have a
-        # primary key to work with
+        # Create a book database row first, so you have a primary key to work with
         book = Book.objects.create(
             user=request.user,
             title=title,
