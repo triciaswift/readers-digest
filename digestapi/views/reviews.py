@@ -1,10 +1,29 @@
-from rest_framework import viewsets, status, serializers, permissions
+from rest_framework import viewsets, status, serializers
 from rest_framework.response import Response
 from digestapi.models import Review, Book
+from django.contrib.auth.models import User
 
+
+class ReviewOwnerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = (
+            "first_name",
+            "last_name",
+        )
+
+class ReviewBookSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Book
+        fields = (
+            "title",
+        )
 
 class ReviewSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
+
+    book = ReviewBookSerializer(many=False)
+    user = ReviewOwnerSerializer(many=False)
 
     class Meta:
         model = Review
@@ -17,8 +36,6 @@ class ReviewSerializer(serializers.ModelSerializer):
 
 
 class ReviewViewSet(viewsets.ViewSet):
-    permission_classes = [permissions.AllowAny]
-
     def list(self, request):
         # Get all reviews
         reviews = Review.objects.all()
